@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Playfair+Display&display=swap');
+
+
+
+/* Navigation Bar */
+
+.navbar{
+  padding-bottom: 2rem;
+}
+.nav-item{
+  padding: 0 18px;
+}
+.nav-link{
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+
+/* LandingPage */
+
+.logo{
+  font-family: 'Montserrat', serif;
+}
+.title{
+  font-weight: 600;
+  font-family: 'Montserrat', serif;
+  font-size: 4rem;
+}
+.title-section{
+  padding: 15% 10% 0;
+}
+.title-image{
+  width: 80%;
+}
+.bg-div{
+  background-color: #3b4c7e;
+  width: 80%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}      
+.start-button{
+  margin-top: 40px;
+}
+
+
+
+/* Output */
+
+.slider-comp{
+  display: grid;
+  place-items: center;
+  margin-left: 10px;
+  width: 100%;
+}
+.slider-comp-inp{
+  width: 50%;
+}
+.carousel-control-next-icon{
+  color: black;
+}
+.cara{
+  padding: 2% 10%;
+}
+.cara-img{
+  width: 95%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: rgb(0, 0, 0);
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: rgb(0, 0, 0);
+}
+.date-form{
+  padding-bottom: 4%;
+}
+.to label{
+  padding: 0 20px;
+  font-family: 'Montserrat', serif;
+}
+.from label{
+  padding: 0 20px;
+  font-family: 'Montserrat', serif;
+  font-weight: 100;
+}
+.submit-btn-form{
+  margin-left: 30px;
+}
+h3{
+  font-family: 'Montserrat', serif;
+}
