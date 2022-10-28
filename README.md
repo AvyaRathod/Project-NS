@@ -41,3 +41,33 @@ The model has an accuracy of 96%
    </p>
     <strong>ML and CV Developer<strong>
     </td>
+    <td>
+
+   #### Riya Batla
+   <p align="center">
+   <img src = "https://media-exp1.licdn.com/dms/image/C4D03AQF9sqBsGQ4Ixw/profile-displayphoto-shrink_400_400/0/1644657834803?e=1672272000&v=beta&t=bOGup9psS0730vR7yHXAkxbp7M6WVz6dlcxLUXhcsxU"  height="120" alt="Riya Batla">
+   </p>
+   <p align="center">
+   <a href = "https://github.com/cereal-hecker"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+   <a href = "https://www.linkedin.com/in/riya-batla/">
+   <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+   </a>
+   </p>
+    <strong>Aspiring Full Stack Developer<strong>
+    </td>
+    <td>
+<td>
+
+#### Nikhil I
+<p align="center">
+<img src = "https://media-exp1.licdn.com/dms/image/C4E03AQEsJd7i6LPYVQ/profile-displayphoto-shrink_400_400/0/1643037859646?e=1667433600&v=beta&t=AzSjF6UkmGr3hH2vlP4e3S6mHqbk4_jKPpqkDtnb2gE"  height="120" alt="Aryan Raj">
+</p>
+<p align="center">
+<a href = "https://github.com/ironnicko"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/nikhil-ivannan-351036201/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+ <strong>Competetive Programmer and Backend Developer<strong>
+</td>
+
