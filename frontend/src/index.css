@@ -4,13 +4,15 @@
 
 /* Navigation Bar */
 
-.navbar{
+.navbar {
   padding-bottom: 2rem;
 }
-.nav-item{
+
+.nav-item {
   padding: 0 18px;
 }
-.nav-link{
+
+.nav-link {
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -18,28 +20,33 @@
 
 /* LandingPage */
 
-.logo{
+.logo {
   font-family: 'Montserrat', serif;
 }
-.title{
+
+.title {
   font-weight: 600;
   font-family: 'Montserrat', serif;
   font-size: 4rem;
 }
-.title-section{
+
+.title-section {
   padding: 15% 10% 0;
 }
-.title-image{
+
+.title-image {
   width: 80%;
 }
-.bg-div{
+
+.bg-div {
   background-color: #3b4c7e;
   width: 80%;
   height: 100vh;
   position: fixed;
   z-index: -1;
-}      
-.start-button{
+}
+
+.start-button {
   margin-top: 40px;
 }
 
@@ -47,22 +54,26 @@
 
 /* Output */
 
-.slider-comp{
+.slider-comp {
   display: grid;
   place-items: center;
   margin-left: 10px;
   width: 100%;
 }
-.slider-comp-inp{
+
+.slider-comp-inp {
   width: 50%;
 }
-.carousel-control-next-icon{
+
+.carousel-control-next-icon {
   color: black;
 }
-.cara{
+
+.cara {
   padding: 2% 10%;
 }
-.cara-img{
+
+.cara-img {
   width: 95%;
 }
 
@@ -75,8 +86,7 @@
   background-image: none;
 }
 
-.carousel-control-next-icon:after
-{
+.carousel-control-next-icon:after {
   content: '>';
   font-size: 55px;
   color: rgb(0, 0, 0);
@@ -87,21 +97,26 @@
   font-size: 55px;
   color: rgb(0, 0, 0);
 }
-.date-form{
+
+.date-form {
   padding-bottom: 4%;
 }
-.to label{
+
+.to label {
   padding: 0 20px;
   font-family: 'Montserrat', serif;
 }
-.from label{
+
+.from label {
   padding: 0 20px;
   font-family: 'Montserrat', serif;
   font-weight: 100;
 }
-.submit-btn-form{
+
+.submit-btn-form {
   margin-left: 30px;
 }
-h3{
+
+h3 {
   font-family: 'Montserrat', serif;
 }
