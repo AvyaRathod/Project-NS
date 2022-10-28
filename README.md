@@ -62,8 +62,13 @@ model = load_model('unet_test.h5', custom_objects={'jacard_coef': jacard_coef})
 
 Outputs:
 ![image](https://user-images.githubusercontent.com/27121364/198721762-feb98315-320b-4bd6-b457-276aaa4fde0e.png)
+</details>
 
-
+<details open>
+  <summary>Workflow</summary>
+To provide a seamless experience to the user a dashboard is created, integrated with a terminal application which shows the live stream with the segmented nuclei and a nuclei count, and allows the user to save an instance of the stream to the database which can be accessed from the frontend.
+  
+![image](https://user-images.githubusercontent.com/27121364/198722347-6ad459be-29ef-4837-8d5e-97fc989b9a4f.png)
 </details>
 
 ## Authors -
