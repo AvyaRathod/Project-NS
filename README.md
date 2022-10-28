@@ -11,7 +11,13 @@ Identifying the cells’ nuclei is the starting point for most analyses because 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+
 
 
 This is a version of U-Net implementation as proposed by [Ronneberger et al.](https://arxiv.org/pdf/1505.04597.pdf) developed with Tensorflow 2.
@@ -53,9 +59,8 @@ The model has an accuracy of 96%
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
    </p>
-    <strong>Aspiring Full Stack Developer<strong>
+    <strong>Frontend Developer<strong>
     </td>
-    <td>
 <td>
 
 #### Nikhil I
@@ -68,6 +73,6 @@ The model has an accuracy of 96%
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
- <strong>Competetive Programmer and Backend Developer<strong>
+ <strong>Competetive Programmer<strong>
 </td>
 
