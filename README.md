@@ -43,6 +43,9 @@ Developed multiple versions of U-Net implementation as proposed by [Ronneberger 
 
 You can download the model files from [here](https://drive.google.com/drive/folders/1d3o5Kt6mTavuedE8oHzvYfA4MWCQLl-k?usp=sharing).
 
+#### Training curves:
+![image](https://user-images.githubusercontent.com/27121364/198712608-0dc6912b-6aaf-48a0-aac3-ef6fd02ab576.png)
+
 | Model  | Accuracy | IOU(Jaccard) |
 | ------------- | ------------- | ------------ |
 | Unet Model  | 96.47%  | 0.8038 |
