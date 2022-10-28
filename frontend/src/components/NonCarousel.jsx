@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import kicks from "./kicks.json";
 import { initializeApp } from "firebase/app";
 import {
@@ -8,6 +8,8 @@ import {
   where,
   getDocs,
   query,
+  QuerySnapshot,
+  orderBy,
 } from "firebase/firestore";
 import firebaseConfig from "./serviceAccountKey.json";
 
@@ -21,26 +23,33 @@ const epochTimeConverted = (time) => {
 };
 
 export default function NonCarousel() {
-  const [date, setDate] = useState({ to: 0, from: 0 });
+  const dConstant = new Date();
+  const [imageData, setImageData] = useState([kicks]);
+  const [date, setDate] = useState({ to: dConstant.getTime(), from: 0 });
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
       where("time", ">=", epochTimeConverted(date.from)),
-      where("time", "<=", epochTimeConverted(date.to))
+      where("time", "<=", epochTimeConverted(date.to)),
+      orderBy("time", "asc")
     );
     const querySnapshot = await getDocs(q);
-    console.log(epochTimeConverted(date.to));
+    const temp = [];
     querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
+      temp.push(doc.data());
     });
+    setImageData(temp);
   };
+
   return (
     <div>
       <form
         className="date-form d-flex justify-content-center"
         method="post"
+        action="#"
         onSubmit={handleSubmit}
       >
         <span className="from col-md-4 d-flex fs-4">
@@ -72,62 +81,31 @@ export default function NonCarousel() {
         </div>
       </form>
       <Carousel className="cara text-dark" interval={null}>
-        <Carousel.Item>
-          <div className="row text-center">
-            <div className="col-lg-6 text-center p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-              <h3>Original</h3>
+        {imageData.map((queryItem) => (
+          <Carousel.Item>
+            <div className="row text-center">
+              <div className="col-lg-6 text-center p-0">
+                <img
+                  className="d-block cara-img"
+                  src={`data:image/png;base64,${queryItem["segmented_image"]}`}
+                  alt="First slide"
+                />
+                <h3>Original</h3>
+                <p>Nuclei Count : {queryItem["nuclei_count"]}</p>
+              </div>
+              <div className="col-lg-6 p-0">
+                <img
+                  className="d-block cara-img"
+                  src={`data:image/png;base64,${
+                    queryItem["original_image"] || queryItem["segmented_image"]
+                  }`}
+                  alt="First slide"
+                />
+                <h3>Segmented</h3>
+              </div>
             </div>
-            <div className="col-lg-6 p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-              <h3>Segmented</h3>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="row text-center">
-            <div className="col-lg-6 text-center p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-            </div>
-            <div className="col-lg-6 p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className="row text-center">
-            <div className="col-lg-6 text-center p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-            </div>
-            <div className="col-lg-6 p-0">
-              <img
-                className="d-block cara-img"
-                src={`data:image/png;base64,${kicks["image"]}`}
-                alt="First slide"
-              />
-            </div>
-          </div>
-        </Carousel.Item>
+          </Carousel.Item>
+        ))}
       </Carousel>
     </div>
   );
