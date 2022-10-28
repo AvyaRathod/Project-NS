@@ -1,4 +1,4 @@
-## Spot Nuclei. Speed Cures.
+## Spotting Nuclei. Speeding Cures.
 
 We’ve all seen people suffer from diseases like cancer, heart disease, chronic obstructive pulmonary disease, Alzheimer’s, and diabetes. Many have seen their loved ones pass away. Think how many lives would be transformed if cures came faster.
 
