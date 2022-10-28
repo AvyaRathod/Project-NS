@@ -38,7 +38,6 @@ export default function NonCarousel() {
   };
   return (
     <div>
-<<<<<<< HEAD
       <form
         className="date-form d-flex justify-content-center"
         method="post"
@@ -70,18 +69,6 @@ export default function NonCarousel() {
         </span>
         <div>
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
-=======
-    <Carousel className='cara text-dark' interval={null}>
-      <Carousel.Item>
-      <div className='row text-center'>
-        <div className='col-lg-6 text-center p-0'>
-        <img
-          className="d-block cara-img"     
-          src={`data:image/png;base64,${image['image']}`}
-          alt="First slide"
-        />
-        <h3>Original</h3>
->>>>>>> 3e111d1ea7ac14eb5078de24f2262ca2dfbbd533
         </div>
       </form>
       <Carousel className="cara text-dark" interval={null}>
