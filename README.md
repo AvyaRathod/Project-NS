@@ -41,7 +41,15 @@ Developed multiple versions of U-Net implementation as proposed by [Ronneberger 
 - [Attention Unet Model](https://github.com/AvyaRathod/Project-NS/blob/main/model_training/ATTENTION-UNET.ipynb)
 - [Attention Residual Unet Model](https://github.com/AvyaRathod/Project-NS/blob/main/model_training/ATTENTION-RES-UNET.ipynb)
 
-You can download the model files from [here](https://drive.google.com/drive/folders/1d3o5Kt6mTavuedE8oHzvYfA4MWCQLl-k?usp=sharing).
+You can download the trained model files from [here](https://drive.google.com/drive/folders/1d3o5Kt6mTavuedE8oHzvYfA4MWCQLl-k?usp=sharing).
+
+To use the model use:
+
+```bash
+from unet_models import jacard_coef, jacard_coef_loss
+model = load_model('unet_test.h5', custom_objects={'jacard_coef': jacard_coef})
+```
+
 
 #### Training curves:
 ![image](https://user-images.githubusercontent.com/27121364/198712608-0dc6912b-6aaf-48a0-aac3-ef6fd02ab576.png)
