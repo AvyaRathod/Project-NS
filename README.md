@@ -2,11 +2,14 @@
 
 We’ve all seen people suffer from diseases like cancer, heart disease, chronic obstructive pulmonary disease, Alzheimer’s, and diabetes. Many have seen their loved ones pass away. Think how many lives would be transformed if cures came faster.
 
-By automating nucleus detection, we could unlock cures faster—from rare disorders to the common cold.
+Identifying the cells’ nuclei is the starting point for most analyses because most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. 
 
-Identifying the cells’ nuclei is the starting point for most analyses because most of the human body’s 30 trillion cells contain a nucleus full of DNA, the genetic code that programs each cell. Identifying nuclei allows researchers to identify each individual cell in a sample, and by measuring how cells react to various treatments, the researcher can understand the underlying biological processes at work.
+Nuclei identification is a pivotal first step in many areas of biomedical research. Pathologists often observe images containing microscopic nuclei as part of their day-to-day jobs. 
 
-### About the model
+During the research, pathologists must identify nuclei characteristics from microscopic images such as volume of nuclei, size, density, and individual position within the image. 
+
+Identifying nuclei allows researchers to identify each individual cell in a sample, and by measuring how cells react to various treatments, the researcher can understand the underlying biological processes at work.
+
 ###### Technologies Used -
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
@@ -18,18 +21,38 @@ Identifying the cells’ nuclei is the starting point for most analyses because 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
+<details open>
+<summary>Install</summary>
+
+```bash
+git clone https://github.com/AvyaRathod/Project-NS  # clone
+pip install -r requirements.txt  # install
+```
+
+</details>
+<details open>
+<summary>Model</summary>
+
+Developed multiple versions of U-Net implementation as proposed by [Ronneberger et al.](https://arxiv.org/pdf/1505.04597.pdf) using Tensorflow 2 over the [Data Science Bowl 2018](https://www.kaggle.com/competitions/data-science-bowl-2018/data) dataset
+
+#### Models developed:
+
+- [Unet Model](https://github.com/AvyaRathod/Project-NS/blob/main/model_training/UNET%20BASE.ipynb)
+- [Attention Unet Model](https://github.com/AvyaRathod/Project-NS/blob/main/model_training/ATTENTION-UNET.ipynb)
+- [Attention Residual Unet Model](https://github.com/AvyaRathod/Project-NS/blob/main/model_training/ATTENTION-RES-UNET.ipynb)
+
+You can download the model files from [here](https://drive.google.com/drive/folders/1d3o5Kt6mTavuedE8oHzvYfA4MWCQLl-k?usp=sharing).
+
+| Model  | Accuracy | IOU(Jaccard) |
+| ------------- | ------------- | ------------ |
+| Unet Model  | 96.47%  | 0.8038 |
+| Attention Unet Model  | Yet to be trained | Yet to be trained|
+| Attention Residual Unet Model | 96.86% | 0.8186 |
 
 
-This is a version of U-Net implementation as proposed by [Ronneberger et al.](https://arxiv.org/pdf/1505.04597.pdf) developed with Tensorflow 2.
+</details>
 
-The layers have been fine-tuned to fit the [data](https://www.kaggle.com/competitions/data-science-bowl-2018/data) for semantic segmentation to spot nuclei from a test sample.
-The model has an accuracy of 96%
-
-*To reuse this model make sure to change the image sizes and edit the data pipeline according to your directory.
-
-![image](https://user-images.githubusercontent.com/27121364/194748899-786addb9-f4df-4c89-8655-c4bedb1ddf29.png)
-
-## Author  -
+## Authors -
 <div align="left"> 
   <table>
   <tr align="left">
