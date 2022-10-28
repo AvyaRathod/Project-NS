@@ -60,6 +60,9 @@ model = load_model('unet_test.h5', custom_objects={'jacard_coef': jacard_coef})
 | Attention Unet Model  | Yet to be trained | Yet to be trained|
 | Attention Residual Unet Model | 96.86% | 0.8186 |
 
+Outputs:
+![image](https://user-images.githubusercontent.com/27121364/198721762-feb98315-320b-4bd6-b457-276aaa4fde0e.png)
+
 
 </details>
 
