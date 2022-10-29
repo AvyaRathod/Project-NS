@@ -1,5 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import React, { useState, useEffect } from "react";
+import TimePicker from "react-time-picker";
 import kicks from "./kicks.json";
 import { initializeApp } from "firebase/app";
 import {
@@ -26,9 +27,12 @@ export default function NonCarousel() {
   const dConstant = new Date();
   const [imageData, setImageData] = useState([kicks]);
   const [date, setDate] = useState({ to: dConstant.getTime(), from: 0 });
+  const [timeF, onChangeF] = useState("10:00:00");
+  const [timeT, onChangeT] = useState("12:00:00");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(epochTimeConverted(date.to + " " + timeT));
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
@@ -43,7 +47,6 @@ export default function NonCarousel() {
     });
     setImageData(temp);
   };
-
   return (
     <div>
       <form
@@ -52,7 +55,7 @@ export default function NonCarousel() {
         action="#"
         onSubmit={handleSubmit}
       >
-        <span className="from col-md-4 d-flex fs-4">
+        <div className="from col-md-4 d-flex fs-4">
           <label for="from">From</label>
           <input
             type="date"
@@ -63,19 +66,27 @@ export default function NonCarousel() {
               setDate({ from: e.target.value, to: date.to });
             }}
           />
-        </span>
-        <span className="col-md-4 to d-flex fs-4">
+        </div>
+        <TimePicker
+          value={timeF}
+          onChange={onChangeF}
+        />
+
+        <div className="col-md-4 to d-flex fs-4">
           <label for="to">To</label>
           <input
             type="date"
             className="form-control"
             id="to"
             name="to"
-            onChange={(e) => {
-              setDate({ to: e.target.value, from: date.from });
-            }}
+            onChange={onChangeT}
           />
-        </span>
+        </div>
+        <TimePicker
+          value={timeT}
+          onChange={onChangeT}
+        />
+
         <div>
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
         </div>
@@ -87,21 +98,27 @@ export default function NonCarousel() {
               <div className="col-lg-6 text-center p-0">
                 <img
                   className="d-block cara-img"
-                  src={`data:image/png;base64,${queryItem["segmented_image"]}`}
-                  alt="First slide"
-                />
-                <h3>Original</h3>
-                <p>Nuclei Count : {queryItem["nuclei_count"]}</p>
-              </div>
-              <div className="col-lg-6 p-0">
-                <img
-                  className="d-block cara-img"
                   src={`data:image/png;base64,${
                     queryItem["original_image"] || queryItem["segmented_image"]
                   }`}
                   alt="First slide"
                 />
+                <h3>Original</h3>
+              </div>
+              <div className="col-lg-6 p-0 text-center">
+                <img
+                  className="d-block cara-img"
+                  src={`data:image/png;base64,${
+                    queryItem["segmented_image"] || queryItem["original_image"]
+                  }`}
+                  alt="First slide"
+                />
                 <h3>Segmented</h3>
+              </div>
+              <div className="w-100 text-center nc-div">
+                <h3 className="nuclei-counts bg-dark text-light rounded w-50">
+                  Nuclei Count : {queryItem["adjusted_nuclei_count"]}
+                </h3>
               </div>
             </div>
           </Carousel.Item>
