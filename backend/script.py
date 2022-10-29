@@ -153,7 +153,7 @@ def save(nuclei_count=None, adj_nuclei_count=None, original_image=None):
 while True:
 
     # _, frame = cap.read()
-    frame = cv2.imread("backend/stage1_train/dd54adb80393de7769b9853c0aa2ee9b240905d0e99c59d4ccd99401f327aa05/images/dd54adb80393de7769b9853c0aa2ee9b240905d0e99c59d4ccd99401f327aa05.png")
+    frame = cv2.imread("backend/stage1_train/6af82abb29539000be4696884fc822d3cafcb2105906dc7582c92dccad8948c5/images/6af82abb29539000be4696884fc822d3cafcb2105906dc7582c92dccad8948c5.png")
     resized_frame = input_image(frame)
     segmented = model.predict(
         resized_frame[int(resized_frame.shape[0]*0.9):])

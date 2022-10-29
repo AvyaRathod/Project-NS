@@ -168,7 +168,7 @@ while True:
     nuclei_count, adj_nuclei_count = connectedCompenets()
 
     print(
-        f"Nuclei Count: {nuclei_count}\nAdjusted Nuclei Count: {adj_nuclei_count}")
+        f"Adjusted Nuclei Count: {adj_nuclei_count}")
 
     font = cv2.FONT_HERSHEY_SIMPLEX
 

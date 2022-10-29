@@ -67,10 +67,10 @@ export default function NonCarousel() {
             }}
           />
         </div>
-        <TimePicker
+        {/* <TimePicker
           value={timeF}
           onChange={onChangeF}
-        />
+        /> */}
 
         <div className="col-md-4 to d-flex fs-4">
           <label for="to">To</label>
@@ -82,10 +82,10 @@ export default function NonCarousel() {
             onChange={onChangeT}
           />
         </div>
-        <TimePicker
+        {/* <TimePicker
           value={timeT}
           onChange={onChangeT}
-        />
+        /> */}
 
         <div>
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
@@ -109,7 +109,7 @@ export default function NonCarousel() {
                 <img
                   className="d-block cara-img"
                   src={`data:image/png;base64,${
-                    queryItem["segmented_image"] || queryItem["original_image"]
+                    queryItem["segmented_image"] || queryItem["originial_image"]
                   }`}
                   alt="First slide"
                 />
@@ -117,7 +117,7 @@ export default function NonCarousel() {
               </div>
               <div className="w-100 text-center nc-div">
                 <h3 className="nuclei-counts bg-dark text-light rounded w-50">
-                  Nuclei Count : {queryItem["adjusted_nuclei_count"]}
+                  Nuclei Count : {queryItem["adjusted_nuclei_count"]} approx.
                 </h3>
               </div>
             </div>
