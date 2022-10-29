@@ -180,7 +180,7 @@ while True:
 
     thickness = 2
 
-    item = f'Nuclei Count : {nuclei_count} Adjusted Nuclei Count: {adj_nuclei_count}'
+    item = f'Adjusted Nuclei Count: {adj_nuclei_count}'
 
     frame = cv2.putText(frame, item, org, font,
                         fontScale, color, thickness, cv2.LINE_AA)
