@@ -50,8 +50,12 @@
   margin-top: 40px;
 }
 
-
-
+.ns-part {
+  color: #6db9e6;
+}
+.site-desc{
+  padding-top: 30px;
+}
 /* Output */
 
 .slider-comp {
@@ -120,6 +124,7 @@
 h3 {
   font-family: 'Montserrat', serif;
 }
-.nc-div{
+
+.nc-div {
   align-items: center;
 }

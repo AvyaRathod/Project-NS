@@ -7,7 +7,7 @@ export default function Navbar() {
         <a className="navbar-brand" href="">
           <h2 className="logo">
             <span className="proj-part">project</span>
-            <span className="proj-part text-primary">NS</span>
+            <span className="ns-part">NS</span>
           </h2>
         </a>
         <button

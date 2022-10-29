@@ -32,13 +32,13 @@ export default function NonCarousel() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(epochTimeConverted(date.to + " " + timeT));
+    console.log(epochTimeConverted(date.from));
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
       where("time", ">=", epochTimeConverted(date.from)),
       where("time", "<=", epochTimeConverted(date.to)),
-      orderBy("time", "asc")
+      orderBy("time", "desc")
     );
     const querySnapshot = await getDocs(q);
     const temp = [];
