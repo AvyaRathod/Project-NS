@@ -17,18 +17,19 @@ import TimePicker from "react-time-picker";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const epochTimeConverted = (time) => {
-  const date = new Date(time);
-  const unixTimestamp = Math.floor(date.getTime() / 1000);
+const epochTimeConverted = (time, hm) => {
+  const date = new Date(time + " " + hm);
+  console.log(time + " " + hm);
+  const unixTimestamp = Math.floor((date.getTime()) / 1000);
   return unixTimestamp;
 };
 
 export default function NonCarousel() {
   const dConstant = new Date();
   const [imageData, setImageData] = useState([kicks]);
-  const [date, setDate] = useState({ to: dConstant.getTime(), from: 0 });
-  const [timeF, onChangeF] = useState("10:00:00");
-  const [timeT, onChangeT] = useState("12:00:00");
+  const [date, setDate] = useState({ to: `${dConstant.getFullYear()}-${dConstant.getMonth()}-${dConstant.getDate()}`, from: "2022-9-26" });
+  const [timeF, onChangeF] = useState("10:00");
+  const [timeT, onChangeT] = useState("12:00");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,8 +37,8 @@ export default function NonCarousel() {
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
-      where("time", ">=", epochTimeConverted(date.from)),
-      where("time", "<=", epochTimeConverted(date.to)),
+      where("time", ">=", epochTimeConverted(date.from, timeF)),
+      where("time", "<=", epochTimeConverted(date.to, timeT)),
       orderBy("time", "desc")
     );
     const querySnapshot = await getDocs(q);
@@ -67,10 +68,10 @@ export default function NonCarousel() {
             }}
           />
         </div>
-        {/* <TimePicker
+        <TimePicker
           value={timeF}
           onChange={onChangeF}
-        /> */}
+        />
 
         <div className="col-md-4 to d-flex fs-4">
           <label for="to">To</label>
@@ -84,10 +85,10 @@ export default function NonCarousel() {
             }}
           />
         </div>
-        {/* <TimePicker
+        <TimePicker
           value={timeT}
           onChange={onChangeT}
-        /> */}
+        />
 
         <div>
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
