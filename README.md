@@ -28,6 +28,10 @@ Identifying nuclei allows researchers to identify each individual cell in a samp
 git clone https://github.com/AvyaRathod/Project-NS  # clone
 pip install -r requirements.txt  # install
 ```
+```bash
+ cd frontend
+ npm run dev
+ ```
 
 </details>
 <details open>
