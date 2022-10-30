@@ -27,9 +27,9 @@ const epochTimeConverted = (time, hm) => {
 export default function NonCarousel() {
   const dConstant = new Date();
   const [imageData, setImageData] = useState([kicks]);
-  const [date, setDate] = useState({ to: `${dConstant.getFullYear()}-${dConstant.getMonth()}-${dConstant.getDate()}`, from: "2022-9-26" });
-  const [timeF, onChangeF] = useState("10:00");
-  const [timeT, onChangeT] = useState("12:00");
+  const [date, setDate] = useState({ to: `${dConstant.getFullYear()}-${dConstant.getMonth()+1}-${dConstant.getDate()}`, from: "2022-10-27" });
+  const [timeF, onChangeF] = useState("00:00");
+  const [timeT, onChangeT] = useState(`${dConstant.getHours()}:${dConstant.getMinutes()}`);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -80,6 +80,7 @@ export default function NonCarousel() {
             className="form-control"
             id="to"
             name="to"
+            value={`${dConstant.getFullYear()}-${dConstant.getMonth()+1}-${dConstant.getDate()}`}
             onChange={(e) => {
               setDate({ from: date.from, to: e.target.value });
             }}
