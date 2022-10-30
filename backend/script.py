@@ -153,13 +153,13 @@ def save(nuclei_count=None, adj_nuclei_count=None, original_image=None):
 while True:
 
     # _, frame = cap.read()
-    frame = cv2.imread("backend/stage1_train/0a7d30b252359a10fd298b638b90cb9ada3acced4e0c0e5a3692013f432ee4e9/images/0a7d30b252359a10fd298b638b90cb9ada3acced4e0c0e5a3692013f432ee4e9.png")
+    frame = cv2.imread("backend/stage1_train/2e2d29fc44444a85049b162eb359a523dec108ccd5bd75022b25547491abf0c7/images/2e2d29fc44444a85049b162eb359a523dec108ccd5bd75022b25547491abf0c7.png")
     resized_frame = input_image(frame)
     segmented = model.predict(
         resized_frame[int(resized_frame.shape[0]*0.9):])
     visited = [[0 for _ in range(SIZE_OF_GRID)]
                for __ in range(SIZE_OF_GRID)]
-    seg = np.squeeze((segmented > 0.56).astype(np.uint8))
+    seg = np.squeeze((segmented > 0.5).astype(np.uint8))
     _2Darray = seg
     nuclei_count, adj_nuclei_count = connectedCompenets()
 
