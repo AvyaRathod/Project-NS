@@ -19,21 +19,32 @@ const db = getFirestore(app);
 
 const epochTimeConverted = (time, hm) => {
   const date = new Date(time + " " + hm);
-  console.log(time + " " + hm);
-  const unixTimestamp = Math.floor((date.getTime()) / 1000);
+  const unixTimestamp = Math.floor(date.getTime() / 1000);
   return unixTimestamp;
 };
 
 export default function NonCarousel() {
+
   const dConstant = new Date();
+  const [index, setIndex] = useState(0);
+  const [loader, setLoader] = useState(false);
   const [imageData, setImageData] = useState([kicks]);
-  const [date, setDate] = useState({ to: `${dConstant.getFullYear()}-${dConstant.getMonth()+1}-${dConstant.getDate()}`, from: "1970-1-01" });
+  const [date, setDate] = useState({
+    to: `${dConstant.getFullYear()}-${
+      dConstant.getMonth() + 1
+    }-${dConstant.getDate()}`,
+    from: "1970-1-01",
+  });
   const [timeF, onChangeF] = useState("00:00");
-  const [timeT, onChangeT] = useState(`${dConstant.getHours()}:${dConstant.getMinutes()}`);
+  const [timeT, onChangeT] = useState("00:00");
+  
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("fetching");
+    setLoader(true);
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
@@ -46,6 +57,7 @@ export default function NonCarousel() {
     querySnapshot.forEach((doc) => {
       temp.push(doc.data());
     });
+    setLoader(false);
     setImageData(temp);
   };
   return (
@@ -68,10 +80,7 @@ export default function NonCarousel() {
             }}
           />
         </div>
-        <TimePicker
-          value={timeF}
-          onChange={onChangeF}
-        />
+        <TimePicker value={timeF} onChange={onChangeF} />
 
         <div className="col-md-4 to d-flex fs-4">
           <label for="to">To</label>
@@ -80,22 +89,25 @@ export default function NonCarousel() {
             className="form-control"
             id="to"
             name="to"
-            value={`${dConstant.getFullYear()}-${dConstant.getMonth()+1}-${dConstant.getDate()}`}
             onChange={(e) => {
               setDate({ from: date.from, to: e.target.value });
             }}
           />
         </div>
-        <TimePicker
-          value={timeT}
-          onChange={onChangeT}
-        />
+        <TimePicker value={timeT} onChange={onChangeT} />
 
         <div>
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
         </div>
       </form>
-      <Carousel className="cara text-dark" interval={null}>
+      <Carousel 
+      activeIndex={index} onSelect={handleSelect}
+      className="cara text-dark" 
+      interval={null}
+      >
+        {loader && (
+        <h1 className="text-center">Loading...</h1>
+        )}
         {imageData.map((queryItem) => (
           <Carousel.Item>
             <div className="row text-center">
@@ -124,10 +136,12 @@ export default function NonCarousel() {
                   Nuclei Count : {queryItem["adjusted_nuclei_count"]} approx.
                 </h3>
               </div>
+              <h4>Slide : {index+1} / {imageData.length}</h4>
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
+      {imageData.length === 0 && <h1 className="text-center">Nothing to see here 👀</h1>}
     </div>
   );
 }
