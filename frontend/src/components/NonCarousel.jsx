@@ -1,6 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
 import React, { useState, useEffect } from "react";
-import TimePicker from "react-time-picker";
 import kicks from "./kicks.json";
 import { initializeApp } from "firebase/app";
 import {
@@ -13,6 +12,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 import firebaseConfig from "./serviceAccountKey.json";
+import TimePicker from "react-time-picker";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
