@@ -32,7 +32,7 @@ export default function NonCarousel() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(epochTimeConverted(date.from));
+    console.log("fetching");
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
@@ -79,7 +79,9 @@ export default function NonCarousel() {
             className="form-control"
             id="to"
             name="to"
-            onChange={onChangeT}
+            onChange={(e) => {
+              setDate({ from: date.from, to: e.target.value });
+            }}
           />
         </div>
         {/* <TimePicker

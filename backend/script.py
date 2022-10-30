@@ -153,7 +153,7 @@ def save(nuclei_count=None, adj_nuclei_count=None, original_image=None):
 while True:
 
     # _, frame = cap.read()
-    frame = cv2.imread("backend/stage1_train/6af82abb29539000be4696884fc822d3cafcb2105906dc7582c92dccad8948c5/images/6af82abb29539000be4696884fc822d3cafcb2105906dc7582c92dccad8948c5.png")
+    frame = cv2.imread("backend/stage1_train/0a7d30b252359a10fd298b638b90cb9ada3acced4e0c0e5a3692013f432ee4e9/images/0a7d30b252359a10fd298b638b90cb9ada3acced4e0c0e5a3692013f432ee4e9.png")
     resized_frame = input_image(frame)
     segmented = model.predict(
         resized_frame[int(resized_frame.shape[0]*0.9):])
@@ -176,7 +176,6 @@ while True:
     elif key == ord('f'):
         imshow(seg)
         plt.show()
-        plt.savefig("test.png")
         choice = input("Enter 's' to save the segment to the database, else press 'Enter': ")
         if choice == 's':
             save(nuclei_count, adj_nuclei_count, frame)
