@@ -113,7 +113,7 @@ To provide a seamless experience to the user a dashboard is created, integrated 
 
 #### Nikhil I
 <p align="center">
-<img src = "https://media-exp1.licdn.com/dms/image/C4E03AQEsJd7i6LPYVQ/profile-displayphoto-shrink_400_400/0/1643037859646?e=1667433600&v=beta&t=AzSjF6UkmGr3hH2vlP4e3S6mHqbk4_jKPpqkDtnb2gE"  height="120" alt="Aryan Raj">
+<img src = "https://media-exp1.licdn.com/dms/image/C4E03AQEsJd7i6LPYVQ/profile-displayphoto-shrink_800_800/0/1643037859646?e=1672876800&v=beta&t=kGcX6OoXIBMfyyt8R_7LdEXP62Vj4fMiZjEXvFGlHvg"  height="120" alt="Nikhil Ivannan">
 </p>
 <p align="center">
 <a href = "https://github.com/ironnicko"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
