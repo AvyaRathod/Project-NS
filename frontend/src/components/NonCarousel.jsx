@@ -42,9 +42,7 @@ export default function NonCarousel() {
     setIndex(selectedIndex);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setLoader(true);
+  const floodData = async () => {
     const imagesRef = collection(db, "Images");
     const q = query(
       imagesRef,
@@ -59,6 +57,16 @@ export default function NonCarousel() {
     });
     setLoader(false);
     setImageData(temp);
+  }
+
+  useEffect(() => {
+    if (loader) floodData();
+    return () => console.clear()
+  })
+
+  const handleSubmit =  (event) => {
+    event.preventDefault();
+    setLoader(true);
   };
   return (
     <div>
