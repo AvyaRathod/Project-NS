@@ -149,7 +149,7 @@ export default function NonCarousel() {
           </Carousel.Item>
         ))}
       </Carousel>
-      {imageData.length === 0 && <h1 className="text-center">Nothing to see here 👀</h1>}
+      {!imageData.length && <h1 className="text-center">Nothing to see here 👀</h1>}
     </div>
   );
 }
