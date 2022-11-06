@@ -11,14 +11,10 @@ export default function LandingPage() {
             </h1>
             <h5 className="title-desc">Spotting Nuclei, Speeding Cures</h5>
             <p className="site-desc">
-            Each time when someone loses their loved one to cancer, 
-            heart disease, chronic obstructive pulmonary disease, the
-            society fails. Just think how many could be saved if cures came faster.
-
-              
-              
-
-              </p>
+              Each time when someone loses their loved one to cancer, heart
+              disease, chronic obstructive pulmonary disease, the society fails.
+              Just think how many could be saved if cures came faster.
+            </p>
           </div>
         </div>
         <div className="col-xl-6 p-0 m-0">
