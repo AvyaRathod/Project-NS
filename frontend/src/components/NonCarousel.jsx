@@ -12,7 +12,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 import firebaseConfig from "./serviceAccountKey.json";
-import { TimePicker } from "react-time-picker";
+import TimePicker from "react-time-picker";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
