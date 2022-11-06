@@ -12,7 +12,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 import firebaseConfig from "./serviceAccountKey.json";
-import TimePicker from "react-time-picker";
+import { TimePicker } from "react-time-picker";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -24,7 +24,6 @@ const epochTimeConverted = (time, hm) => {
 };
 
 export default function NonCarousel() {
-
   const dConstant = new Date();
   const [index, setIndex] = useState(0);
   const [loader, setLoader] = useState(false);
@@ -37,7 +36,7 @@ export default function NonCarousel() {
   });
   const [timeF, onChangeF] = useState("00:00");
   const [timeT, onChangeT] = useState("00:00");
-  
+
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
@@ -57,14 +56,14 @@ export default function NonCarousel() {
     });
     setLoader(false);
     setImageData(temp);
-  }
+  };
 
   useEffect(() => {
     if (loader) floodData();
-    return () => console.clear()
-  })
+    return () => console.clear();
+  });
 
-  const handleSubmit =  (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setLoader(true);
   };
@@ -108,14 +107,13 @@ export default function NonCarousel() {
           <input type="submit" className="btn btn-dark submit-btn-form"></input>
         </div>
       </form>
-      <Carousel 
-      activeIndex={index} onSelect={handleSelect}
-      className="cara text-dark" 
-      interval={null}
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        className="cara text-dark"
+        interval={null}
       >
-        {loader && (
-        <h1 className="text-center">Loading...</h1>
-        )}
+        {loader && <h1 className="text-center">Loading...</h1>}
         {imageData.map((queryItem) => (
           <Carousel.Item>
             <div className="row text-center">
@@ -144,12 +142,16 @@ export default function NonCarousel() {
                   Nuclei Count : {queryItem["adjusted_nuclei_count"]} approx.
                 </h3>
               </div>
-              <h4>Slide : {index+1} / {imageData.length}</h4>
+              <h4>
+                Slide : {index + 1} / {imageData.length}
+              </h4>
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
-      {!imageData.length && <h1 className="text-center">Nothing to see here 👀</h1>}
+      {!imageData.length && (
+        <h1 className="text-center">Nothing to see here 👀</h1>
+      )}
     </div>
   );
 }
