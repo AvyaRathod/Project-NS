@@ -13,6 +13,7 @@ def dfs(i, j):
         dfs(i+row, j+column)
 
 
+
 nuclei = 0
 pixels = []
 for i in range(128):
